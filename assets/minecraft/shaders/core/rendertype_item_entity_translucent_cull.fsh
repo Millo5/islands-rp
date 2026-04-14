@@ -21,7 +21,7 @@ in float timeOfDay;
 
 out vec4 fragColor;
 
-const float waterHeight = 49.9;
+const float waterHeight = 49.3;
 
 // Noise primitives
 
@@ -156,6 +156,7 @@ void main() {
 
     if (isSkyPixel) {
         if (skyboxQuality > 0.0) {
+            // vec3 viewDir = normalize(floor(vertexPosition / 0.0625) * 0.0625);
             vec3 viewDir = normalize(vertexPosition);
             fragColor = vec4(getMinecraftSkyWithClouds(viewDir), 1.0);
             return;
